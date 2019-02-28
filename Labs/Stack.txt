@@ -1,0 +1,72 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class Stack
+{
+    public:
+        Stack(){
+            size = 0;
+            top = -1;
+        }
+        Stack(int s){
+            size= s;
+            top = -1;
+            mem = new int(size);
+        }
+        void intit()
+        {
+             int i =0;
+             while(i<size)
+             {
+                          mem[i] = 0;
+                          i++;
+             }
+        }
+        void push(int z){
+             if(top == -1 || top < size )
+             {
+                    mem[++top] = z;
+             }
+        }
+
+        void pop(){
+             
+             
+        }
+        int getTop(){
+            return top;
+        }
+        int getTopElement(){
+            return mem[top];
+        }
+        void display(){
+             int i =0;
+             while(i<size)
+             {
+                          cout<<mem[i] <<endl;
+                          i++;
+             }
+
+        }
+
+    private:
+        int size;
+        int * mem;
+        int top;
+};
+
+int main()
+{
+    Stack st(6);
+    st.push(4);
+    st.push(6);
+    st.push(8);
+    st.push(2);
+    st.push(110);
+    st.push(120);
+   // st.push(200);
+    st.display();
+    getch();
+    return 0;
+ 
+}
